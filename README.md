@@ -1,3 +1,5 @@
 # kafka
-test
+
+
+Kafka listener and producer examples for learning purposes.
 

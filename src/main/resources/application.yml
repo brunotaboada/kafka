@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: demo
+  kafka:
+    bootstrap-servers: 172.23.166.44:9092
+
+app:
+  topic:
+    name: demo
