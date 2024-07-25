@@ -2,20 +2,17 @@ spring:
   application:
     name: demo
   kafka:
-    bootstrap-servers: 172.23.166.44:9092
+    bootstrap-servers: localhost:63501
   h2:
     console:
       enabled: true
-      path: /h2
+      path: /
 
   datasource:
     url: jdbc:h2:mem:camunda-h2-database;DB_CLOSE_ON_EXIT=FALSE
     driverClassName: org.h2.Driver
-    platform: h2
   jpa:
-    hibernate:
-      ddl-auto: update
-    database-platform: org.hibernate.dialect.H2Dialect
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
 
 
 camunda:
@@ -32,10 +29,6 @@ camunda:
       #        password: my-password
       subscriptions:
         fee: # This topic name must match the respective `@ExternalTaskSubscription`
-          lock-duration: 10000 # Defines for how long the External Tasks are locked until they can be fetched again
-          process-definition-key: demo # Filters for External Tasks of this key
-          auto-open: false # Defines whether the subscription is opened automatically or not
-        error_handling: # This topic name must match the respective `@ExternalTaskSubscription`
           lock-duration: 10000 # Defines for how long the External Tasks are locked until they can be fetched again
           process-definition-key: demo # Filters for External Tasks of this key
           auto-open: false # Defines whether the subscription is opened automatically or not

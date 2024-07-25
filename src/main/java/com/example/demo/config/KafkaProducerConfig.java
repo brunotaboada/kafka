@@ -1,4 +1,4 @@
-package com.example.config;
+package com.example.demo.config;
 
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.springframework.beans.factory.annotation.Value;
